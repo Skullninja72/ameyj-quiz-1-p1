@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz-1 code-Know about youself </title>
+</head>
+<body>
+    <h1>The code used for my Project 1 is as follows;</h1>
+    <h2>
+        var readlineSync = require("readline-sync");
+const chalk = require('chalk');
+var score = 0;
+
+var userName = readlineSync.question(chalk.cyan.bold("What's your name? "));
+
+console.log(chalk.yellow.underline("Welcome "  +  userName  +  " ,so Do You KNOW Amey?"));
+// data of high score
+var highScores =[
+  {
+    name:"Amey",
+  score: 10,
+  },
+  {
+ name:"Aniruddha",
+ score:8,
+  }
+]
+// play function
+
+
+function play(question,answer){
+  
+  
+  var userAnswer = readlineSync.question(chalk.yellowBright.italic.bgMagenta(question));
+
+  if (userAnswer.toUpperCase() === answer.toUpperCase()){
+   const chalk = require('chalk');
+    console.log(chalk.green.bgBlackBright('right!'));
+    score=score+1;
+    }else{
+    
+    console.log(chalk.red.bgRedBright('wrong!'));
+    
+  }
+  
+  console.log(chalk.magenta.bold('current score:' ), score);
+  console.log(chalk.blue("--------------------------------"));
+}
+
+// array of objects
+
+
+var questions =[
+  {
+   question:
+  "Which is my favourite ice-cream ? ",
+  answer : "chocolate"
+}, {
+question :"Who is my favourite superhero? ",
+  answer:"Iron-Man"
+
+},{
+question : "which is my favourite car ",
+answer:"MERCEDES"
+
+},
+{
+question : "Do i like to travel outside or stay-indoors ",
+answer:"travel outside"},
+{
+question : "  Does amey like to attend weddings? ",
+answer:"no"},
+{
+question : "what is my favourite dessert? ",
+answer:"chocolate brownie ice-cream"},
+{
+question : "which is my favourite element in the Elements table",
+answer:"Vibranium"},
+{
+question : "What would be the name of the Artificial intelligence if I made one?",
+answer:"J.A.R.V.I.S."},
+{
+question : "Which is the best avengers movie according to me? ",
+answer:"Endgame"},
+{
+  question:"Who is my favourite youtuber?",
+  answer:"Tanay Pratap"
+}];
+ 
+// loop
+
+for (var i=0 ; i<questions.length;  i++) {
+  var currentQuestion = questions[i];
+  play(currentQuestion.question,
+  currentQuestion.answer)
+
+}
+
+console.log(chalk.cyan('YAY! You SCORED: ') , score); </h2>
+</body>
+</html>  
